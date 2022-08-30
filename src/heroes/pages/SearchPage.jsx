@@ -23,7 +23,7 @@ export const SearchPage = () => {
   const onSearchSubmit = (e) =>{
     e.preventDefault();
     // if(searchText.trim().length <= 1) return;
-
+    
     navigate(`?q=${searchText}`)
     
   }
@@ -37,7 +37,7 @@ export const SearchPage = () => {
     <div className="col-5">
       <h4>Searching</h4>
       <hr />
-      <form onSubmit={onSearchSubmit}>
+      <form onSubmit={onSearchSubmit} aria-label={'form'}>
         <input type="text"
         placeholder='search your hero'
         className='form-control'
@@ -62,10 +62,10 @@ export const SearchPage = () => {
     </div>
     } */}
     
-    <div className="animate__animated animate__fadeIn alert alert-primary" style={{display: showSearch ? '' :'none'}} >Search a Hero
+    <div className="animate__animated animate__fadeIn alert alert-primary" aria-label='alert-primary' style={{display: showSearch ? '' :'none'}} >Search a Hero
     </div>
 
-    <div className="animate__animated animate__fadeIn alert alert-danger" style={{display:showError? '' : 'none'}} >There are no results with <b>{q}</b>
+    <div className="animate__animated animate__fadeIn alert alert-danger" aria-label='alert-danger' style={{display:showError? '' : 'none'}} >There are no results with <b>{q}</b>
     </div>
 
     
